@@ -1,0 +1,14 @@
+.fondologin{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.8)
+    ),url(https://setupgamer.es/wp-content/uploads/2023/12/setup-gaming.png);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh; 
+    text-align: center;
+    padding: 10px;
+}

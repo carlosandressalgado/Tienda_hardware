@@ -1,0 +1,41 @@
+.contenedor{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.8)
+    ),url(https://setupgamer.es/wp-content/uploads/2023/12/setup-gaming.png);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 80vh; 
+    text-align: center;
+    padding: 10%;
+}
+
+.contenedor h1{
+	color: white;
+}
+
+.card {
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    justify-content: space-between;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-buttons button {
+    margin: 5px;
+}
+

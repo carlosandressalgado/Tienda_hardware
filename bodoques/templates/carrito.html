@@ -1,0 +1,49 @@
+{% extends 'basecarrito.html' %}
+{% load custom_filters %} 
+{% load humanize %}
+
+{% block title %}Tu Carrito de Compras{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h2 class="my-4">Tu Carrito de Compras</h2>
+    {% if carrito %}
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in carrito.items.all %}
+          <tr>
+            <td>{{ item.producto.nombre }}</td>
+            <td>{{ item.cantidad }}</td>
+            <td>${{ item.producto.precio|intcomma }}</td>
+            <td>${{ item.producto.precio|multiply:item.cantidad|intcomma }}</td>
+            <td>
+              <form action="{% url 'eliminar_del_carrito' item.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <h3>Total: ${{ total|intcomma }}</h3>
+      <br>
+    {% else %}
+      <p>No hay productos en el carrito.</p>
+    {% endif %}
+    <a href="{% url 'productos' %}" class="btn btn-primary">Seguir Comprando</a>
+    <br></br>
+    <h3>¡Recuerde revisar la cantidad y el valor total de sus productos!</h3>
+    <br></br>
+  </div>
+  
+{% endblock %}

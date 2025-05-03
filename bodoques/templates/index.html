@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto tienda</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'img/b.png' %}" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#pnosotros">Bodoques PC</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link" href="{% url 'productos' %}">Inicio</a>
+                        <a class="nav-link" href="{% url 'productos_por_categoria' categoria_id=1 %}">Componentes</a>
+                        <a class="nav-link" href="{% url 'productos_por_categoria' categoria_id=2 %}">Accesorios</a>
+                        <a class="nav-link" href="{% url 'productos_por_categoria' categoria_id=3 %}">Pc's armados</a>
+                        <a class="nav-link" href="{% url 'carrito' %}">Tu carrito</a>
+                        <a class="nav-link" href="{% url 'login' %}">Conectate</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>    
+    <div class="contenedor">
+            <br>
+            <br>
+            <h1 class="text-white"> BIENVENIDO A BODOQUES PC</h1>          
+            <br>
+            <br>
+            <br>
+            <br>
+            <h6 class="text-white"> Aquí encontrarás todo lo necesario para la creación y upgrade
+                 de tu Pc, increibles accesorios y monitores para tu setup o puedes adquirir alguno de nuestros equipos ya armados a partir de los mejores componentes del mercado </h6>
+        </div>
+    </div>
+    
+    
+    <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators">
+		<div class="carousel-indicators">
+			<button aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators" type="button"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img alt="Componentes" class="d-block w-100 h-100" src="{% static 'img/componentes.webp' %}">
+				<div class="carousel-caption">
+					<h5>Componentes</h5>
+					<p>Aquí encontrarás todas las piezas necesarias para
+                        poder armarte un PC de primera calidad o si ya cuentas
+                        con un equipo le podrás realizar un upgrade de la forma que prefieras
+                    </p>
+					<p><a class="btn btn-warning mt-3" href="{% url 'productos_por_categoria' categoria_id=1 %}">CLICK AQUÍ</a></p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img alt="Accesorios" class="d-block w-100 h-100" src="{% static 'img/setups.webp' %}">
+				<div class="carousel-caption">
+					<h5>Accesorios y monitores</h5>
+					<p>En esta sección se encuentran todos los accesorios que un gamer
+                        necesita: auriculares, teclado, ratón y más, además tambien hay
+                        variedad de monitores para cada gusto 
+                    </p>
+					<p><a class="btn btn-warning mt-3" href="{% url 'productos_por_categoria' categoria_id=2 %}">CLICK AQUÍ</a></p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img alt="Equipos armados" class="d-block w-100 h-100" src="{% static 'img/pc-gamer.jpg' %}">
+				<div class="carousel-caption">
+					<h5>Pc's armados</h5>
+					<p>Aqui podrás encontrar nuestros equipos previamente armados 
+                        estos cuentan con excelentes componentes para cada gama, además
+                        de bellos gabinetes y garantía de 1 año
+                        
+                    </p>
+					<p><a class="btn btn-warning mt-3" href="{% url 'productos_por_categoria' categoria_id=3 %}">CLICK AQUÍ</a></p>
+				</div>
+			</div>
+
+		</div><button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="visually-hidden">Previous</span></button> <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="visually-hidden">Next</span></button>
+	</div>
+
+    <div class="informacion">
+        <br>
+        <h2> NOSOTROS</h2>
+        <br>
+        <p id="pnosotros">En Bodoques Pc, nos enorgullece ofrecerte una amplia gama 
+            de componentes informáticos, accesorios de última generación, 
+            monitores de alta calidad y PC armados personalizables para 
+            satisfacer todas tus necesidades tecnológicas. Nuestro objetivo es proporcionar a nuestros clientes una experiencia de compra conveniente,
+             confiable y satisfactoria en el mundo de la informática.</p>
+        <br>     
+        <h4>Componentes de primera calidad:</h4>   
+        <p>Desde tarjetas gráficas potentes hasta procesadores de última generación, en Bodoques Pc
+             encontrarás todo lo que necesitas para potenciar tu equipo. Trabajamos con marcas líderes en 
+             la industria para garantizar la calidad y el rendimiento de cada producto que ofrecemos.</p> 
+        <h4>Accesorios para optimizar tu experiencia:</h4> 
+        <p>Además de componentes principales, también ofrecemos una amplia selección de accesorios que complementarán
+             tu configuración. Desde teclados y ratones ergonómicos hasta auriculares de alta fidelidad, tenemos todo 
+             lo que necesitas para mejorar tu experiencia de juego o trabajo.</p>   
+        <h4>Monitores de vanguardia:</h4>
+        <p>Un buen monitor es esencial para disfrutar al máximo de tus juegos o proyectos. En Bodoques Pc, ofrecemos
+            una variedad de monitores de diferentes tamaños, resoluciones y tasas de refresco para adaptarse a tus preferencias y necesidades específicas.</p>
+        <h4>PC armados a medida:</h4>
+        <p>Si buscas una solución lista para usar, también ofrecemos PC armados a medida que se adaptan a tus 
+            requerimientos y presupuesto. Nuestros expertos en montaje ensamblarán tu PC con los componentes de la más alta calidad 
+            para garantizar un rendimiento óptimo desde el primer momento.</p>    
+        <h4>Atención al cliente excepcional:</h4>
+        <p>En Bodoques Pc, nos comprometemos a brindarte un servicio al cliente excepcional en cada paso del 
+            camino. Nuestro equipo de expertos está siempre disponible para responder tus preguntas, ofrecerte asesoramiento
+             personalizado y garantizar que tengas una experiencia de compra sin problemas.
+
+            ¡Explora nuestra amplia selección de productos hoy mismo y lleva tu experiencia informática al siguiente nivel con Bodoques Pc!</p>
+        <br>    
+        <h4>Puedes encontrar nuestra tienda fisica en la siguiente ubicación en el puesto n°42:</h4>
+        <br>
+        </div>            
+        
+        <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13317.106036037241!2d-70.6504454!3d-33.4421019!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a138c9165b%3A0xc5710ab2432b6373!2sGaleria%20Eurocentro!5e0!3m2!1ses!2scl!4v1715737213439!5m2!1ses!2scl"
+         width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+        </div>
+        <div id="weather" class="text-white text-center mt-4" style="background-color: #212529; padding: 20px; border-radius: 10px;">
+            <h4>Clima actual en Santiago</h4>
+            <p id="weather-data">Cargando clima...</p>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const apiKey = '9666b984b6c3efd53575bceea7ac64fc';  // Reemplaza con tu propia API Key
+                const ciudad = 'Santiago';
+                const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric&lang=es`;
+        
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        const temp = data.main.temp;
+                        const descripcion = data.weather[0].description;
+                        const icon = data.weather[0].icon;
+                        const iconUrl = `https://openweathermap.org/img/wn/${icon}.png`;
+                        document.getElementById('weather-data').innerHTML = `
+                            <img src="${iconUrl}" alt="${descripcion}">
+                            <strong>${temp}°C</strong> - ${descripcion}
+                        `;
+                    })
+                    .catch(error => {
+                        document.getElementById('weather-data').innerText = 'No se pudo obtener el clima.';
+                        console.error('Error al obtener el clima:', error);
+                    });
+            });
+        </script>
+
+        <div class="footer">
+        <p>Derechos de autor © 2024. Mi sitio web.</p>
+        <img class="footer-logo" src="{% static 'img/b.png' %}" alt="Logo de la empresa">
+        <div class="footer-links">
+            <br>
+            <a href="#">Aviso legal</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Términos y condiciones</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

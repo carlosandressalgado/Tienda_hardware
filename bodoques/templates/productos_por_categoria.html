@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}{{ categoria.nombre }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for producto in productos %}
+        <div class="col-md-4">
+            <div class="card">
+                {% if producto.imagen %}
+                    <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+                {% else %}
+                    <img src="{% static 'img/no_foto.png' %}" alt="Imagen no disponible">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto.nombre }}</h5>
+                    <p class="card-text">${{ producto.precio|intcomma }}</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="#" class="btn btn-primary">Detalles</a>
+                        <form action="{% url 'agregar_al_carrito' producto.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-success">Agregar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
