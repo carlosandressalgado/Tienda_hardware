@@ -37,6 +37,8 @@
       </table>
       <h3>Total: ${{ total|intcomma }}</h3>
       <br>
+      <a href="{% url 'iniciar_pago' %}" class="btn btn-primary btn-lg">Pagar</a>
+      <br><br>
     {% else %}
       <p>No hay productos en el carrito.</p>
     {% endif %}

@@ -127,3 +127,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'bodoques/static'), )
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+TRANSBANK = {
+    'commerce_code': '597055555532',  # Código de comercio de pruebas
+    'api_key': 'VDP4W76R7FFK33XFI8JV9G2S57N9BE2Q',  # Llave secreta del sandbox
+    'environment': 'TEST',  # Cambiar a 'PRODUCTION' en producción
+}

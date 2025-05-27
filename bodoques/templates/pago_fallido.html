@@ -1,0 +1,8 @@
+{% extends 'basecarrito.html' %}
+{% block content %}
+<div class="text-center mt-5">
+    <h2>Pago fallido</h2>
+    <p>Hubo un problema con el pago. Inténtalo nuevamente.</p>
+    <a href="{% url 'carrito' %}" class="btn btn-warning">Volver al carrito</a>
+</div>
+{% endblock %}

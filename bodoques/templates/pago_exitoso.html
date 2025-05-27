@@ -1,0 +1,8 @@
+{% extends 'basecarrito.html' %}
+{% block content %}
+<div class="text-center mt-5">
+    <h2>¡Pago Exitoso!</h2>
+    <p>Gracias por tu compra. Tu pago fue autorizado.</p>
+    <a href="{% url 'productos' %}" class="btn btn-success">Volver a comprar</a>
+</div>
+{% endblock %}
